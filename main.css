@@ -1,0 +1,43 @@
+img {
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+header {
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+.column {
+    flex: 25%;
+    max-width: 25%;
+    padding: 0 4px;
+}
+
+.column img {
+    margin-top: 8px;
+    vertical-align: middle;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+@media screen and (max-width: 800px) and (min-width: 601px) {
+    .column {
+        flex: 33.33%;
+        max-width: 33.33%;  
+    }
+}

@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="#">Proyecto</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#home">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#pedidos">Pedidos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a data-toggle="modal" data-target="#mi-cuenta" class="nav-link">Mi Cuenta</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+              <div class="main-img" id="home"></div>
+              <div class="container">
+                  <section id="tacos">
+                      <h1 class="text-center">TACOS MX</h1>
+                      <div class="descripcion">
+                          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iure quo inventore tenetur, iste quam quis nihil recusandae molestiae nobis eligendi ex ipsa architecto hic mollitia corrupti voluptatem natus modi ducimus. Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet dicta rem et aut nostrum placeat odio? Dolorem eos, quibusdam natus similique placeat ea doloremque, incidunt nisi quasi pariatur iure fugit! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, est debitis quam labore quaerat repellat ut odit error voluptate consectetur ad nemo magnam molestias eos eius quia. Quos, perferendis qui? Lorem ipsum dolor sit amet consectetur adipisicing elit. Labore, nihil? Laborum corporis nulla, nesciunt distinctio cupiditate veniam quasi modi eius eligendi sit libero esse labore, qui quas fugit, id suscipit?</p>
+                      </div>
+                  </section>
+                  <section class="row" id="pedidos">
+                      <div class="col-md-6 mb-5">
+                            <div class="card">
+                                    <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pedir</a>
+                                    </div>
+                                  </div>
+                      </div>
+                      <div class="col-md-6 mb-5">
+                            <div class="card">
+                                    <img src="https://loremflickr.com/200/100" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pedir</a>
+                                    </div>
+                                  </div>
+                      </div>
+                      <div class="col-md-6 mb-5">
+                            <div class="card">
+                                    <img src="https://loremflickr.com/200/100" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pedir</a>
+                                    </div>
+                                  </div>
+                      </div>
+                      <div class="col-md-6 mb-5">
+                            <div class="card">
+                                    <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Pedir</a>
+                                    </div>
+                                  </div>
+                      </div>
+                  </section>
+              </div>
+              <footer class="bg-info">
+                  <div class="container-fluid">
+                      <div class="row">
+                          <div class="col-6"><small>Todos los derechos reservados &copy; </small></div>
+                          <div class="col-6 text-right"><small>Oscar Carrasco</small></div>
+                      </div>
+                  </div>
+              </footer>
+              <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" id="exampleModal">
+                    <div class="modal-dialog modal-lg" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title">Pedir Tacos</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-md-4"><img src="https://loremflickr.com/150/300" class="card-img-top" alt="..."></div>
+                                <div class="col-md-8">
+                                    <div class="col-12">
+                                        <h3>PASTOR CON QUESO</h3>
+                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam dignissimos dolor incidunt fugit assumenda nesciunt voluptate, sunt dolorum eius pariatur magnam unde tenetur corrupti velit veritatis molestias ut quis harum.</p>
+                                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+                                    </div>
+                                    <div class="col-12">
+                                            <h4 class="uppercase">Opiniones</h4>
+                                        <div class="row">
+                                                <div class="col-md-4">
+                                                    <p>Mario Bros</p>
+                                                    <span class="stars">
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="fas fa-star"></i>
+                                                        <i class="far fa-star"></i>
+                                                    </span><br>
+                                                    <span class="opiniones">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero cupiditate inventore doloremque, hic assumenda consectetur? Ipsam consequatur hic corporis similique, consequuntur laboriosam, placeat, rem facere quibusdam sed molestiae saepe?</span>
+                                                </div>
+                                                <div class="col-md-4">
+                                                        <p>Mario Bros</p>
+                                                        <span class="stars">
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="fas fa-star"></i>
+                                                                <i class="far fa-star"></i>
+                                                                <i class="far fa-star"></i>
+                                                            </span><br>
+                                                        <span class="opiniones">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero cupiditate inventore doloremque, hic assumenda consectetur? Ipsam consequatur hic corporis similique, consequuntur laboriosam, placeat, rem facere quibusdam sed molestiae saepe?</span>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                            <p>Mario Bros</p>
+                                                            <span class="stars">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </span><br>
+                                                            <span class="opiniones">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero cupiditate inventore doloremque, hic assumenda consectetur? Ipsam consequatur hic corporis similique, consequuntur laboriosam, placeat, rem facere quibusdam sed molestiae saepe?</span>
+                                                        </div>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                          <button type="button" class="btn btn-primary">Pedir</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mi-cuenta" aria-hidden="true" id="mi-cuenta">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title">Pedir Tacos</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="profile">
+                                                <img src="https://img.icons8.com/cotton/64/000000/gender-neutral-user.png" class="rounded-circle">
+                                                <small>John Doe</small>
+                                        </div>
+                                        <span class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i></span>
+                                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sapiente nostrum rerum illum nihil inventore ad autem. Optio recusandae laboriosam, ipsa eius amet odit quaerat facere deserunt. Tenetur provident eveniet quo.</p>
+                                            
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="col-12">
+                                            <h3>Mi ubicación</h3>
+                                            <div id="wrapper-9cd199b9cc5410cd3b1ad21cab2e54d3">
+                                                    <div id="map-9cd199b9cc5410cd3b1ad21cab2e54d3"></div><script>(function () {
+                                                    var setting = {"height":150,"width":723,"zoom":17,"queryString":"Epicnest, Avenida Chapultepec Sur, Colonia Americana, Americana, Guadalajara, Jalisco, Mexico","place_id":"ChIJdcsfvgWuKIQRtpJzZdONKOs","satellite":false,"centerCoord":[20.671535005991643,-103.36876329999996],"cid":"0xeb288dd3657392b6","id":"map-9cd199b9cc5410cd3b1ad21cab2e54d3","embed_id":"33889"};
+                                                    var d = document;
+                                                    var s = d.createElement('script');
+                                                    s.src = 'https://1map.com/js/script-for-user.js?embed_id=33889';
+                                                    s.async = true;
+                                                    s.onload = function (e) {
+                                                      window.OneMap.initMap(setting)
+                                                    };
+                                                    var to = d.getElementsByTagName('script')[0];
+                                                    to.parentNode.insertBefore(s, to);
+                                                  })();</script><a href="https://1map.com/map-embed?embed_id=33889">Maps by 1Map</a></div>
+                                        </div>
+                                        <div class="col-12">
+                                                <h4 class="uppercase">Historial</h4>
+                                            <div class="row">
+                                                    <div class="col-md-4">
+                                                        <p>Mario Bros</p>
+                                                        <span class="stars">
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="fas fa-star"></i>
+                                                            <i class="far fa-star"></i>
+                                                        </span><br>
+                                                        <span class="opiniones">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero cupiditate inventore doloremque, hic assumenda consectetur? Ipsam consequatur hic corporis similique, consequuntur laboriosam, placeat, rem facere quibusdam sed molestiae saepe?</span>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                            <p>Mario Bros</p>
+                                                            <span class="stars">
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="fas fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                    <i class="far fa-star"></i>
+                                                                </span><br>
+                                                            <span class="opiniones">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero cupiditate inventore doloremque, hic assumenda consectetur? Ipsam consequatur hic corporis similique, consequuntur laboriosam, placeat, rem facere quibusdam sed molestiae saepe?</span>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                                <p>Mario Bros</p>
+                                                                <span class="stars">
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="fas fa-star"></i>
+                                                                        <i class="far fa-star"></i>
+                                                                    </span><br>
+                                                                <span class="opiniones">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid libero cupiditate inventore doloremque, hic assumenda consectetur? Ipsam consequatur hic corporis similique, consequuntur laboriosam, placeat, rem facere quibusdam sed molestiae saepe?</span>
+                                                            </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar</button>
+                              <button type="button" class="btn btn-primary">Pedir</button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
