@@ -40,11 +40,20 @@ class App extends React.Component {
 	};
 
 	saveTodo = () => {
-		this.setState({
-			todos: [ ...this.state.todos, this.state.value ],
-			value: ''
-		});
-	};
+		if (this.state.value) {
+			this.setState({
+				todos: [ ...this.state.todos, this.state.value ],
+				value: ''
+			});
+		}
+  };
+  
+  deleteTodo = (index) => {
+    this.setState({
+      todos: this.state.todos.filter((_, i) => i !== index)
+    });
+    
+  }
 
 	render() {
 		console.log(this.state);
@@ -74,15 +83,17 @@ class App extends React.Component {
 				<Grid container justify="center">
 					<Grid item md={8}>
 						<List>
-							<ListItem dense button>
-								<Checkbox />
-								<ListItemText primary="Check the pre-work!" />
-								<ListItemSecondaryAction>
-									<IconButton>
-										<DeleteIcon />
-									</IconButton>
-								</ListItemSecondaryAction>
-							</ListItem>
+							{this.state.todos.map((todo, index) => (
+									<ListItem dense button key={index}>
+										<Checkbox />
+										<ListItemText primary={todo} />
+										<ListItemSecondaryAction>
+											<IconButton onClick={() => this.deleteTodo(index)}>
+												<DeleteIcon />
+											</IconButton>
+										</ListItemSecondaryAction>
+									</ListItem>
+								))}
 						</List>
 					</Grid>
 				</Grid>
