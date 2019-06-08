@@ -1,14 +1,8 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
-import TextField from '@material-ui/core/TextField';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemSecondaryAction from '@material-ui/core/ListItemSecondaryAction';
-import ListItemText from '@material-ui/core/ListItemText';
-import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import DeleteIcon from '@material-ui/icons/Delete';
 import Grid from '@material-ui/core/Grid';
+import TodoForm from './TodoForm';
+import TodoList from './TodoList';
 
 /**
  * ------------------------------------------------------
@@ -42,21 +36,25 @@ class App extends React.Component {
 	saveTodo = () => {
 		if (this.state.value) {
 			this.setState({
-				todos: [ ...this.state.todos, this.state.value ],
+				todos: [ ...this.state.todos, { value: this.state.value, completed: false } ],
 				value: ''
 			});
 		}
-  };
-  
-  deleteTodo = (index) => {
-    this.setState({
-      todos: this.state.todos.filter((_, i) => i !== index)
-    });
-    
-  }
+	};
+
+	toggleCompleted = (index) => {
+		const todos = this.state.todos;
+		todos[index].completed = !todos[index].completed;
+		this.setState({ todos });
+	};
+
+	deleteTodo = (index) => {
+		this.setState({
+			todos: this.state.todos.filter((_, i) => i !== index)
+		});
+	};
 
 	render() {
-		console.log(this.state);
 		return (
 			<React.Fragment>
 				<Typography align="center" variant="h2" gutterBottom>
@@ -64,37 +62,20 @@ class App extends React.Component {
 				</Typography>
 				<Grid container justify="center">
 					<Grid item>
-						<form
-							onSubmit={(e) => {
-								e.preventDefault();
-								this.saveTodo();
-							}}
-						>
-							<TextField
-								label="Add Task"
-								type="search"
-								margin="normal"
-								onChange={this.updateValue}
-								value={this.state.value}
-							/>
-						</form>
+            <TodoForm 
+              value={this.state.value} 
+              updateValue={this.updateValue} 
+              saveTodo={this.saveTodo}
+            />
 					</Grid>
 				</Grid>
 				<Grid container justify="center">
 					<Grid item md={8}>
-						<List>
-							{this.state.todos.map((todo, index) => (
-									<ListItem dense button key={index}>
-										<Checkbox />
-										<ListItemText primary={todo} />
-										<ListItemSecondaryAction>
-											<IconButton onClick={() => this.deleteTodo(index)}>
-												<DeleteIcon />
-											</IconButton>
-										</ListItemSecondaryAction>
-									</ListItem>
-								))}
-						</List>
+            <TodoList
+              todos = { this.state.todos }
+              toggleCompleted = { this.toggleCompleted }
+              deleteTodo = { this.deleteTodo }
+            />
 					</Grid>
 				</Grid>
 			</React.Fragment>
