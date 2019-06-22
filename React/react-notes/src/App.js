@@ -3,6 +3,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import NotesForm from './NotesForm';
 import NotesList from './NotesList';
+import { Link } from 'react-router-dom';
 
 class App extends React.Component {
   constructor(props) {
