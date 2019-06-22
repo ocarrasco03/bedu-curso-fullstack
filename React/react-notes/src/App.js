@@ -16,12 +16,10 @@ class App extends React.Component {
     }
   }
 
-  UpdateTitle = (event) => {
-    this.setState({ title: event.target.value })
-  };
-
-  UpdateDescription = (event) => {
-    this.setState({ description: event.target.value });
+  updateState = field => event => {
+    this.setState({
+      [field]: event.target.value
+    });
   }
   
   render () {
@@ -38,7 +36,7 @@ class App extends React.Component {
                 margin="normal"
                 fullWidth
                 value={this.state.title}
-                onChange={this.UpdateTitle}
+                onChange={this.updateState('title')}
               />
             </Grid>
             <Grid item xs={12}>
@@ -48,7 +46,7 @@ class App extends React.Component {
                 multiline
                 rows="4"
                 fullWidth
-                onChange={this.UpdateDescription}
+                onChange={this.updateState('description')}
                 value={this.state.description}
               />
             </Grid>
