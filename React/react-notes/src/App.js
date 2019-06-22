@@ -11,11 +11,21 @@ class App extends React.Component {
     super(props);
     this.state = {
       description: '',
-      notes: '',
+      notes: [],
       title: '',
     }
   }
+
+  UpdateTitle = (event) => {
+    this.setState({ title: event.target.value })
+  };
+
+  UpdateDescription = (event) => {
+    this.setState({ description: event.target.value });
+  }
+  
   render () {
+    console.log(this.state);
     return ( 
       <React.Fragment>
         <Typography align="center" variant="h2" gutterBottom>My Notes</Typography>
@@ -27,6 +37,8 @@ class App extends React.Component {
                 placeholder="Title for this note..."
                 margin="normal"
                 fullWidth
+                value={this.state.title}
+                onChange={this.UpdateTitle}
               />
             </Grid>
             <Grid item xs={12}>
@@ -36,6 +48,8 @@ class App extends React.Component {
                 multiline
                 rows="4"
                 fullWidth
+                onChange={this.UpdateDescription}
+                value={this.state.description}
               />
             </Grid>
             <Fab color="secondary">
