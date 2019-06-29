@@ -1,4 +1,5 @@
 import React from 'react';
+import axios from 'axios';
 import Typography from '@material-ui/core/Typography';
 import { Grid, Fab } from '@material-ui/core';
 import { Link, Route, Redirect } from 'react-router-dom';
@@ -16,6 +17,16 @@ class App extends React.Component {
 			notes: [],
 			title: ''
 		};
+	}
+
+	componentDidMount() {
+		axios
+			.get('/notes.json')
+			.then((response) => {
+				console.log(response);
+				this.setState({ notes: response.data });
+			})
+			.catch((e) => console.log(`Unable to fetch data: ${e}`));
 	}
 
 	updateState = (field) => (event) => {
@@ -47,9 +58,9 @@ class App extends React.Component {
 		});
 	};
 
-	filterNote = id => {
-		return this.state.notes.filter(note => note.id === parseInt(id))[0];
-	}
+	filterNote = (id) => {
+		return this.state.notes.filter((note) => note.id === parseInt(id))[0];
+	};
 
 	render() {
 		console.log(this.state);
@@ -75,8 +86,8 @@ class App extends React.Component {
 						<Route
 							path="/view/:id"
 							render={(props) => {
-								const note = this.filterNote(props.match.params.id)
-								return note ? <Note note={ note } /> : <Redirect to="/" />;
+								const note = this.filterNote(props.match.params.id);
+								return note ? <Note note={note} /> : <Redirect to="/" />;
 							}}
 						/>
 					</Grid>
