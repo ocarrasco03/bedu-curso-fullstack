@@ -1,7 +1,7 @@
 import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Grid, Fab } from '@material-ui/core';
-import { Link, Route } from 'react-router-dom';
+import { Link, Route, Redirect } from 'react-router-dom';
 import AddIcon from '@material-ui/icons/Add';
 import NotesForm from './NotesForm';
 import NotesList from './NotesList';
@@ -41,11 +41,15 @@ class App extends React.Component {
 		}
 	};
 
-	deleteNote = (index) => {
+	deleteNote = (id) => {
 		this.setState({
-			notes: this.state.notes.filter((_, i) => i !== index)
+			notes: this.state.notes.filter((note) => note.id !== id)
 		});
 	};
+
+	filterNote = id => {
+		return this.state.notes.filter(note => note.id === parseInt(id))[0];
+	}
 
 	render() {
 		console.log(this.state);
@@ -68,10 +72,16 @@ class App extends React.Component {
 								/>
 							)}
 						/>
-            <Route path='/view/:id' render={props => <Note {...props} notes={this.state.notes} />} />
+						<Route
+							path="/view/:id"
+							render={(props) => {
+								const note = this.filterNote(props.match.params.id)
+								return note ? <Note note={ note } /> : <Redirect to="/" />;
+							}}
+						/>
 					</Grid>
 					<Grid item xs={8}>
-            <NotesList notes={this.state.notes} deleteNote={this.deleteNote} />
+						<NotesList notes={this.state.notes} deleteNote={this.deleteNote} />
 					</Grid>
 				</Grid>
 				<Fab color="primary" component={Link} to={'/new'} size="small">

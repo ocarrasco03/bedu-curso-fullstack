@@ -12,7 +12,7 @@ const NotesList = (props) => {
 					<ListItem dense button key={index} component={Link} to={`/view/${note.id}`}>
 						<ListItemText primary={note.title} secondary={note.description} />
 						<ListItemSecondaryAction>
-							<IconButton onClick={() => deleteNote(index)}>
+							<IconButton onClick={() => deleteNote(note.id)}>
 								<DeleteIcon />
 							</IconButton>
 						</ListItemSecondaryAction>
